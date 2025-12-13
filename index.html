@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saul Freeberty</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            background: #1a1a1a;
+            border: 2px solid #00ff00;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff00, transparent);
+            animation: scan 2s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #00ff00;
+        }
+        
+        .prompt {
+            color: #ff0080;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .name {
+            color: #00ff00;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background: #00ff00;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .bio-section {
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .bio-line {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .symbol {
+            color: #ff0080;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .text {
+            flex: 1;
+        }
+        
+        .highlight {
+            color: #00d4ff;
+            font-weight: bold;
+        }
+        
+        .links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #00ff00;
+        }
+        
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #00ff00;
+            transition: all 0.3s;
+            padding: 8px 12px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        
+        .link-item:hover {
+            color: #ff0080;
+            border-color: #ff0080;
+            background: rgba(255, 0, 128, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .icon {
+            font-size: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="prompt">root@dev:~$</span>
+            <span class="name">Saul Freeberty</span>
+            <span class="cursor"></span>
+        </div>
+        
+        <div class="bio-section">
+            <div class="bio-line">
+                <span class="symbol">▸</span>
+                <span class="text">
+                    <span class="highlight">~15 years</span> crafting software: 
+                    <span class="highlight">10 years freelancing</span>, 
+                    <span class="highlight">5 years deep-diving frontend</span>
+                </span>
+            </div>
+            
+            <div class="bio-line">
+                <span class="symbol">▸</span>
+                <span class="text">
+                    Currently architecting <span class="highlight">cloud infrastructure</span> and <span class="highlight">backend services</span> 
+                    with <span class="highlight">C#/.NET</span>, <span class="highlight">AWS</span>, <span class="highlight">PostgreSQL</span>, and <span class="highlight">Next.js</span>
+                </span>
+            </div>
+            
+            <div class="bio-line">
+                <span class="symbol">▸</span>
+                <span class="text">
+                    Obsessed with <span class="highlight">encryption</span>, <span class="highlight">security</span>, and building 
+                    <span class="highlight">distributed systems</span> that just work™
+                </span>
+            </div>
+        </div>
+        
+        <div class="links">
+            <a href="https://github.com/freeberty" class="link-item" target="_blank">
+                <span class="icon">⚡</span>
+                <span>github.com/freeberty</span>
+            </a>
+            
+            <a href="https://t.me/your_username" class="link-item" target="_blank">
+                <span class="icon">✉</span>
+                <span>@telegram</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
